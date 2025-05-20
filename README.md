@@ -247,11 +247,6 @@ ui <- fluidPage(
   ),
   
 ```
-## Age portion of final data summary
-
-<img width="716" alt="Screenshot 2025-05-14 at 8 12 02 AM" src="https://github.com/user-attachments/assets/7f1aa787-76df-4222-a6d9-a6ec962a2ea7" />
-
-**Note**: All the `NA` values are those aircrafts that flew out of a NYC airport in 2013 but did not fly out of ORD in 2023-2024. The `nycflights13` package contains only those flights that flew out of NYC in 2013 . We could not find a similar dataset for ORD 2023-2024 so we still used NYC 2013 data to calculate aircraft age.
 
 ## Flight Delay Predictor
 ```
