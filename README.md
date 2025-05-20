@@ -9,12 +9,67 @@
 
 
 ## Project Overview
-This project analyzes 2023–2024 flight delays at Chicago O'Hare International Airport (ORD) for three major US airline operators - American Airlines (AA), Delta Airlines (DL), and United Airlines (UA) over reasons of the delay, major holidays, and distribution of delays by hour, weekday and month. In addition, it also explores the possibility of relationship between aircraft age and flight delays. Lastly, a prediction model based on 2023-2024 data attempts to predict flight delays on a particular date and time for 2025. All the analysis and visualizations are conviniently displayed on an interactive [Shiny Application](https://amatya02.shinyapps.io/Ohare_flight_delays/). 
+This project looks at European football, utilizing a unique analysis of historical data (from 2008 to 2016) from over 400 clubs and 11 leagues. The project uses datasets that consist of team-level performance, official tactical attributes, and player statistics for more than 10,000 players. The goal is to look for patterns or insights that relate to match outcomes or how teams play. In addition to demonstrating some analysis, the project presents a potential computational feature and hopefully provides deepening visualizations to engage users, particularly those in the sport that may not be formally trained in analytics. The dashboard, built in R Shiny, balanced thorough analysis and user-centered design, while being mindful of technical limitations from data size to visualization complexity.  
+[Shiny Application](). 
 
-## Things to keep in mind
-- The three biggest airlines in the U.S - American, United and Delta are chosen for this project to represent the nation's commercial flights since these airlines have a combined market share of 51.3% (Voronoi 2024 )
-- Only flights departing out of ORD are analyzed
-- AA - American Airlines, DL - Delta Airlines, UA - United Airlines
+## What does this database include?
+Datasets Used
+The dashboard integrates seven core datasets, each processed and merged for analysis:
+
+Match Data (Match.csv)
+
+Contains ~25,000 historical matches.
+
+Key fields: home_team_goal, away_team_goal, date, league_id, team_api_id, etc.
+
+Derived fields: total_goals, match_result, goal_difference.
+
+
+Team Data (Team.csv)
+
+Details on 400+ football clubs.
+
+Includes: team_long_name, team_short_name, team_api_id.
+
+
+Team Attributes (Team_Attributes.csv)
+
+Tactical info such as:
+
+build_up_play_speed
+
+defence_pressure
+
+chance_creation_passing
+
+Enables clustering of teams by style.
+
+Player Data (Player.csv)
+
+Profile info for ~11,000 footballers.
+
+Includes: player_name, birthday, height, weight.
+
+Player Attributes (Player_Attributes.csv)
+
+Skill-based ratings over time:
+
+overall_rating, finishing, dribbling, short_passing, strength, etc.
+
+Enables year-wise player skill analysis and predictions.
+
+League Data (League.csv)
+
+Metadata on 11 European leagues.
+
+Used for grouping matches and comparisons across leagues.
+
+Country Data (Country.csv)
+
+Supports merging league/country names.
+
+Adds context for league locations.
+
 
 ## Source of Data
 - **Carrier and Delay Dataset**: Dataset filtered by three airlines between 2023 and 2024 at ORD and imported as a CSV file from Bureau of Transportation Statistics Airline On-Time Statistics. The CSV files were uploaded to and pulled from this Git repository for coding on R Studio
