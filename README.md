@@ -2075,7 +2075,7 @@ server <- function(input, output, session) {
 ```
 ## Running the App
 ```
-shinyApp(ui, server)
+shinyApp(ui=ui , server=server )
 ```
 ## Click the link below to visit the interactive shiny app 
 
