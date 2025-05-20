@@ -10,7 +10,7 @@
 
 ## Project Overview
 This project looks at European football, utilizing a unique analysis of historical data (from 2008 to 2016) from over 400 clubs and 11 leagues. The project uses datasets that consist of team-level performance, official tactical attributes, and player statistics for more than 10,000 players. The goal is to look for patterns or insights that relate to match outcomes or how teams play. In addition to demonstrating some analysis, the project presents a potential computational feature and hopefully provides deepening visualizations to engage users, particularly those in the sport that may not be formally trained in analytics. The dashboard, built in R Shiny, balanced thorough analysis and user-centered design, while being mindful of technical limitations from data size to visualization complexity.  
-[Shiny Application](). 
+[Shiny Application]( https://nabikarki21.shinyapps.io/Data_332_Final/). 
 
 ## 📁 What Does This Database Include?
 
