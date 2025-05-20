@@ -138,7 +138,7 @@ player_attr <- read_csv(file.path(temp_dir, "Player_Attributes.csv")) %>% clean_
 - `Player_Attributes.csv` : Skill-based performance ratings recorded over time
 - `League.csv` : Used to categorize and compare matches across leagues
 - `Country.csv` : Used to enrich league and team data with country names
-- - `Data332.R` : The R studio file
+- `332Final.R` : The R studio file
 
 ## Requirements
 
@@ -248,32 +248,7 @@ ui <- fluidPage(
   
 ```
 
-## Flight Delay Predictor
-```
-# Seasonal‐average table (2023 & 2024) by Month/Day/Hour
-seasonal_tbl <- raw %>%
-  rename(
-    FlightDate      = `Date (MM/DD/YYYY)`,
-    DepDelayMinutes = `Departure delay (Minutes)`
-  ) %>%
-  mutate(
-    FlightDate = mdy(FlightDate),
-    Year       = year(FlightDate),
-    Month      = month(FlightDate),
-    Day        = day(FlightDate),
-    Hour       = hour(as_hms(`Scheduled departure time`))
-  ) %>%
-  filter(Year %in% c(2023, 2024)) %>%
-  group_by(Month, Day, Hour) %>%
-  summarize(AvgDelay = mean(DepDelayMinutes, na.rm = TRUE), .groups = "drop")
 
-predict_delay <- function(date2025, hour2025) {
-  d  <- ymd(date2025)
-  m  <- month(d); dy <- day(d); hr <- hour2025
-  out <- seasonal_tbl %>% filter(Month == m, Day == dy, Hour == hr) %>% pull(AvgDelay)
-  if (length(out) == 0) out <- mean(seasonal_tbl$AvgDelay, na.rm = TRUE)
-  round(out, 1)
-}
 ```
 ## Building Shiny App
 
